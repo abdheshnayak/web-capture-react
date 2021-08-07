@@ -66,7 +66,8 @@
     width: calc(100% - 0.5rem);
     max-height: calc(100vh - 11rem);
     object-fit: contain;
-    height: calc(100vh - 11rem);
+    // height: calc(100vh - 11rem);
+    min-height: 20rem;
   }
 }
 .main {
