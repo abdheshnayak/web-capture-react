@@ -9,11 +9,6 @@ function Main() {
 
   useEffect(() => {
     captureUrl();
-    // axios("https://api.anayak.com.np/url-capture/?url=https://progman.in").then(
-    //   (res) => {
-    //     setimage(res.data);
-    //   }
-    // );
   }, []);
 
   const my_ref = createRef();
@@ -78,7 +73,7 @@ function Main() {
             type="text"
             ref={my_ref}
             placeholder="https://facebook.com"
-            defaultValue="https://progman.in"
+            defaultValue="https://google.com"
           />
           <input type="submit" value="Capture" />
         </div>
