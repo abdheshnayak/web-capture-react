@@ -11,8 +11,11 @@
   background-color: white;
   z-index: 1;
   h2 {
+    font-size: 1.25rem;
+    position: relative;
     margin: 0;
     padding: 0.75rem;
+    padding-top: 1rem;
   }
 }
 
@@ -75,39 +78,75 @@
   min-height: 100vh;
 }
 
-@keyframes loader {
+@keyframes spin {
   0% {
-    width: 3rem;
-    height: 5rem;
-  }
-  50% {
-    width: 5rem;
-    height: 3rem;
+    transform: rotate(0deg);
   }
   100% {
-    width: 3rem;
-    height: 5rem;
+    transform: rotate(360deg);
   }
 }
 
 .spinner {
-  background-color: red;
   position: absolute;
   z-index: 1;
   width: 100%;
   height: 100%;
-  background-color: rgba($color: #000000, $alpha: 0.25);
+  background-color: rgba($color: #000000, $alpha: 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(3px);
 
   &:after {
     content: "";
     position: absolute;
-    background-color: red;
-    width: 4rem;
-    height: 4rem;
-    animation: loader 1s ease-in-out infinite;
-    border-radius: 0.25rem;
+
+    width: 3rem;
+    height: 3rem;
+
+    border: 8px solid #fff; /* Light grey */
+    border-top: 8px solid #000; /* Blue */
+    border-radius: 50%;
+
+    animation: spin 2s linear infinite;
   }
+}
+
+.nav-btns-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  a {
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+    color: #333;
+    &:hover {
+      background-color: #eee;
+    }
+    &:active {
+      background-color: transparent;
+    }
+  }
+}
+
+.brand {
+  font-size: 0.5rem;
+  position: absolute;
+  left: 0.75rem;
+  top: 0.5rem;
+  a {
+    text-decoration: none;
+    color: blue;
+    &:hover {
+      color: black;
+    }
+    &:active {
+      color: purple;
+    }
+  }
+}
+
+.api-doc {
+  margin: 1rem;
 }

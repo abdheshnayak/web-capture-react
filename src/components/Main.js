@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { createRef, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import Header from "./Header";
 import "./main.scss";
 
 function Main() {
@@ -53,15 +54,7 @@ function Main() {
 
   return (
     <div className="main">
-      <div className="app-bar">
-        <div className="container">
-          <h2>
-            URL CAPTURE <span style={{ color: "#789ABC" }}>|</span>{" "}
-            <span style={{ color: "#aaa" }}>ANAYAK</span>
-          </h2>
-        </div>
-      </div>
-      <div style={{ padding: "1.75rem" }}></div>
+      <Header />
       <form
         onSubmit={(e) => {
           e.preventDefault();
