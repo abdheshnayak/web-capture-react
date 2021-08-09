@@ -24,7 +24,7 @@ function APIDoc() {
           <h3>How to use?</h3>
           <p>
             <b>End Point</b> :{" "}
-            <code>https://api.anayak.com.np/url-capture/</code>
+            <code>https://api.anayak.com.np/web-capture/</code>
             <br />
             <b>Method</b> : <span>GET</span>
             <br />
