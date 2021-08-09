@@ -8,6 +8,9 @@ function Main() {
   const [image, setimage] = useState("");
   const [is_loading, setis_loading] = useState(false);
 
+  const [width, setwidth] = useState(1024);
+  const [height, setheight] = useState(780);
+
   useEffect(() => {
     captureUrl();
   }, []);
@@ -41,7 +44,7 @@ function Main() {
     setis_loading(true);
     axios({
       url: "https://api.anayak.com.np/url-capture/",
-      params: { url: my_ref.current.value },
+      params: { url: my_ref.current.value, width, height },
     })
       .then((res) => {
         setis_loading(false);
@@ -55,23 +58,29 @@ function Main() {
   return (
     <div className="main">
       <Header />
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          captureUrl();
-        }}
-      >
-        <div className="button-box-cont">
-          <input
-            type="text"
-            ref={my_ref}
-            placeholder="https://facebook.com"
-            defaultValue="https://google.com"
-          />
-          <input type="submit" value="Capture" />
-        </div>
-      </form>
-
+      <div className="container">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            captureUrl();
+          }}
+          className="form"
+        >
+          <div className="wh-outer">
+            <input type="number" value={width} />✕
+            <input type="number" value={height} />
+          </div>
+          <div className="button-box-cont">
+            <input
+              type="text"
+              ref={my_ref}
+              placeholder="https://facebook.com"
+              defaultValue="https://google.com"
+            />
+            <input type="submit" value="Capture" />
+          </div>
+        </form>
+      </div>
       <div className="container">
         <div className="image-container">
           <img src={image} alt="" />

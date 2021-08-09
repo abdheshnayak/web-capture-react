@@ -24,6 +24,7 @@
   display: flex;
   justify-content: center;
   gap: 0.5rem;
+
   input[type="text"] {
     width: 15rem;
     // min-width: 12rem;
@@ -149,4 +150,28 @@
 
 .api-doc {
   margin: 1rem;
+}
+.form {
+  display: flex;
+  // background-color: red;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.wh-outer {
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  input {
+    font-weight: bold;
+    width: 3.5rem;
+    color: #777;
+    padding: 0.25rem;
+    padding-left: 1rem;
+    font-size: 1rem;
+  }
 }
