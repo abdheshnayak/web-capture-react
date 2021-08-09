@@ -10,7 +10,7 @@ function Header(props) {
         <div className="container">
           <div className="nav-btns-container">
             <h2>
-              URL CAPTURE
+              WEB CAPTURE
               <span className="brand">
                 <a href="https://anayak.com.np">ANAYAK</a>
               </span>

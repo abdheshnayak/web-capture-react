@@ -46,7 +46,7 @@ function Main() {
     }
     setis_loading(true);
     axios({
-      url: "https://api.anayak.com.np/url-capture/",
+      url: "https://api.anayak.com.np/web-capture/",
       params: {
         url: my_ref.current.value,
         width: width_height.width,
