@@ -36,7 +36,7 @@ function APIDoc() {
 
           <h3>Example:</h3>
           <code>
-            https://api.anayak.com.np/url-capture/?url=https://google.com
+            https://api.anayak.com.np/web-capture/?url=https://google.com
           </code>
         </div>
       </div>
