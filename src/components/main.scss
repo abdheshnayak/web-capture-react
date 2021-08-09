@@ -68,10 +68,11 @@
     border-radius: 0.25rem;
     // min-width: calc(100% - 0.5rem);
     width: calc(100% - 0.5rem);
-    max-height: calc(100vh - 11rem);
+    // max-height: calc(100vh - 11rem);
     object-fit: contain;
     // height: calc(100vh - 11rem);
     min-height: 20rem;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.75));
   }
 }
 .main {

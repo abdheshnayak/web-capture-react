@@ -8,8 +8,10 @@ function Main() {
   const [image, setimage] = useState("");
   const [is_loading, setis_loading] = useState(false);
 
-  const [width, setwidth] = useState(1024);
-  const [height, setheight] = useState(780);
+  const [width_height, setwidth_height] = useState({
+    width: 1024,
+    height: 780,
+  });
 
   useEffect(() => {
     captureUrl();
@@ -44,7 +46,11 @@ function Main() {
     setis_loading(true);
     axios({
       url: "https://api.anayak.com.np/url-capture/",
-      params: { url: my_ref.current.value, width, height },
+      params: {
+        url: my_ref.current.value,
+        width: width_height.width,
+        height: width_height.height,
+      },
     })
       .then((res) => {
         setis_loading(false);
@@ -53,6 +59,15 @@ function Main() {
       .catch((err) => {
         setis_loading(false);
       });
+  };
+
+  const changeHandlerWH = (e) => {
+    setwidth_height((s) => {
+      return {
+        ...s,
+        [e.target.name]: e.target.value,
+      };
+    });
   };
 
   return (
@@ -67,8 +82,19 @@ function Main() {
           className="form"
         >
           <div className="wh-outer">
-            <input type="number" value={width} />✕
-            <input type="number" value={height} />
+            <input
+              type="number"
+              value={width_height.width}
+              onChange={changeHandlerWH}
+              name="width"
+            />
+            ✕
+            <input
+              type="number"
+              value={width_height.height}
+              onChange={changeHandlerWH}
+              name="height"
+            />
           </div>
           <div className="button-box-cont">
             <input

@@ -27,7 +27,8 @@ function APIDoc() {
             <br />
             <b>Method</b> : <span>GET</span>
             <br />
-            <b>Params</b> : <span>url</span>
+            <b>Params</b> :{" "}
+            <span>url(String), width (Number), height(Number)</span>
             <br />
             <b>Response</b> : <span>Image (base64 string)</span>
           </p>
