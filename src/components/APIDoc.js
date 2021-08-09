@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 import Header from "./Header";
 
 function APIDoc() {
@@ -39,6 +40,7 @@ function APIDoc() {
           </code>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { createRef, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import Footer from "./Footer";
 import Header from "./Header";
 import "./main.scss";
 
@@ -113,6 +114,7 @@ function Main() {
           {is_loading && <div className="spinner"></div>}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
