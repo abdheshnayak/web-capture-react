@@ -56,9 +56,16 @@ function APIDoc() {
 
           <h3>Example:</h3>
 
-          <code>
-            https://api.anayak.com.np/web-capture/image?url=https://google.com&width=12&height=8
-          </code>
+          <br />
+
+          <a
+            href="https://api.anayak.com.np/web-capture/image?url=https://google.com&width=12&height=8"
+            style={{ textDecoration: "none", color: "#333" }}
+          >
+            <code>
+              https://api.anayak.com.np/web-capture/image?url=https://google.com&width=12&height=8
+            </code>
+          </a>
 
           <h3>Output:</h3>
 

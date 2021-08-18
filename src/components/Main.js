@@ -1,4 +1,5 @@
 import axios from "axios";
+import { motion } from "framer-motion";
 import React, { createRef, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Footer from "./Footer";
@@ -71,6 +72,32 @@ function Main() {
     });
   };
 
+  const loadingContainerVariants = {
+    start: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+    end: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const loadingCircleTransition = {
+    duration: 0.5,
+    yoyo: Infinity,
+    ease: "easeInOut",
+  };
+  const loadingCircleVariants = {
+    start: {
+      y: "0%",
+    },
+    end: {
+      y: "100%",
+    },
+  };
   return (
     <div className="main">
       <Header />
@@ -111,7 +138,28 @@ function Main() {
       <div className="container">
         <div className="image-container">
           <img src={image} alt="" />
-          {is_loading && <div className="spinner"></div>}
+          {is_loading && (
+            <div className="spinner">
+              <motion.div
+                variants={loadingContainerVariants}
+                initial="start"
+                animate="end"
+              >
+                <motion.span
+                  variants={loadingCircleVariants}
+                  transition={loadingCircleTransition}
+                />
+                <motion.span
+                  variants={loadingCircleVariants}
+                  transition={loadingCircleTransition}
+                />
+                <motion.span
+                  variants={loadingCircleVariants}
+                  transition={loadingCircleTransition}
+                />
+              </motion.div>
+            </div>
+          )}
         </div>
       </div>
       <Footer />
