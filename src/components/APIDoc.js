@@ -13,10 +13,10 @@ function APIDoc() {
           <p>
             It is an API to get a screenshot of any website simply. It is
             designed to use in portfolios, projects. Any place where a
-            screenshot of a website is required to show can use this API. Many
-            times you need to show your website or something's screenshot but
-            needed dynamically. For that situation, this is much helpful for you
-            to use.
+            screenshot of a website is required to show,Then you can use this
+            API. Many times you need to show your website or something's
+            screenshot but needed dynamically. For that situation, this is much
+            helpful for you to use.
           </p>
           <h3>Is this free to use?</h3>
           <p>
