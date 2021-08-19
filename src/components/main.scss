@@ -113,6 +113,9 @@
   flex-wrap: wrap;
 
   & > .btn {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
     display: flex;
     align-items: center;
 
@@ -145,6 +148,8 @@
   left: 0.75rem;
   top: 0.5rem;
   a {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
     text-decoration: none;
     color: blue;
     &:hover {
