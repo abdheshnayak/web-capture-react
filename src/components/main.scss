@@ -10,7 +10,7 @@
   width: 100%;
   background-color: white;
   z-index: 1;
-  h2 {
+  .app-bar-h2 {
     font-size: 1.25rem;
     position: relative;
     margin: 0;
@@ -41,14 +41,14 @@
     padding: 0.25rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    background-color: #333;
-    color: #eee;
+    // background-color: #333;
+    color: #333;
     border-radius: 0.25rem;
-    &:active {
-      background-color: #000;
-    }
+    background-color: #fff;
+    transition: all 0.25s ease-in-out;
     &:hover {
-      opacity: 0.75;
+      color: #fff;
+      background-color: rgb(64, 67, 255);
     }
   }
 }
@@ -108,15 +108,29 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  a {
+
+  & > .btn {
+    display: flex;
+    align-items: center;
+
     text-decoration: none;
-    transition: background-color 0.2s ease-in-out;
-    color: #333;
-    &:hover {
-      background-color: #eee;
-    }
-    &:active {
-      background-color: transparent;
+
+    h2 {
+      color: #333;
+      border: 2px solid #777;
+
+      padding: 0.25rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      border-radius: 0.2rem;
+
+      margin: 0;
+      margin-right: 0.5rem;
+      position: relative;
+
+      &.brand-link {
+        background-color: transparent;
+      }
     }
   }
 }
@@ -192,5 +206,34 @@
   }
   &:active {
     color: purple;
+  }
+}
+
+.custom-ripple {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: rgba($color: rgb(63, 63, 241), $alpha: 0.25);
+    left: 50%;
+    top: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+      height: calc(100% + 1px);
+      left: 0;
+      top: 0;
+    }
+  }
+  &:active {
+    &::after {
+      background-color: transparent;
+    }
   }
 }

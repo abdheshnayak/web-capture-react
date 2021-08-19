@@ -131,6 +131,7 @@ function Main() {
               placeholder="https://facebook.com"
               defaultValue="https://google.com"
             />
+
             <input type="submit" value="Capture" />
           </div>
         </form>

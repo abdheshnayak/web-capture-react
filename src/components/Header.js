@@ -9,16 +9,18 @@ function Header(props) {
       <div className="app-bar">
         <div className="container">
           <div className="nav-btns-container">
-            <h2>
+            <h2 className="app-bar-h2">
               WEB CAPTURE
               <span className="brand">
-                <a href="https://anayak.com.np">ANAYAK</a>
+                <a className="brand-link" href="https://anayak.com.np">
+                  ANAYAK
+                </a>
               </span>
             </h2>
-            <Link to={loc.pathname == "/" ? "/api" : "/"}>
-              <h2>
+            <Link className="btn" to={loc.pathname == "/" ? "/api" : "/"}>
+              <h2 className="custom-ripple">
                 {loc.pathname == "/" ? (
-                  "API"
+                  "API Doc"
                 ) : (
                   <i className="fas fa-home-lg"></i>
                 )}
