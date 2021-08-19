@@ -69,7 +69,7 @@ function APIDoc() {
                 <b>Response</b> : <span>Image</span>
               </p>
               <h4>Example:</h4>
-              <pre style={{ overflowX: "scroll", padding: "1rem" }}>
+              <pre style={{ overflowX: "auto", padding: "1rem" }}>
                 <a
                   href="https://api.anayak.com.np/web-capture/image?url=https://google.com&width=12&height=8"
                   style={{ textDecoration: "none", color: "#333" }}
@@ -79,7 +79,7 @@ function APIDoc() {
                   </code>
                 </a>
               </pre>
-              <pre style={{ overflowX: "scroll", padding: "1rem" }}>
+              <pre style={{ overflowX: "auto", padding: "1rem" }}>
                 <code>
                   &lt;img
                   src="https://api.anayak.com.np/web-capture/image?url=https://google.com&width=12&height=8
