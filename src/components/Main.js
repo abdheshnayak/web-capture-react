@@ -98,6 +98,49 @@ function Main() {
       y: "100%",
     },
   };
+
+  const download = (e) => {
+    if (!my_ref.current.value) {
+      toast.error("Url is not provided.");
+      return;
+    } else if (!validURL(my_ref.current.value)) {
+      toast.error("This is not a valid url.");
+      return;
+    } else if (my_ref.current.value.substring(0, 4) != "http") {
+      toast.error("URL must start with http");
+      return;
+    }
+    setis_loading(true);
+
+    var url = new URL("https://api.anayak.com.np/web-capture/image");
+    var params = {
+      url: my_ref.current.value,
+      width: width_height.width,
+      height: width_height.height,
+    };
+
+    url.search = new URLSearchParams(params).toString();
+
+    fetch(url)
+      .then((response) => {
+        setis_loading(false);
+        response.arrayBuffer().then(function (buffer) {
+          const url = window.URL.createObjectURL(new Blob([buffer]));
+          const link = document.createElement("a");
+          link.href = url;
+          link.setAttribute("download", "image.png"); //or any other extension
+          document.body.appendChild(link);
+          link.click();
+        });
+      })
+      .catch((err) => {
+        setis_loading(false);
+        toast.error("Faild to download");
+
+        console.log(err);
+      });
+  };
+
   return (
     <div className="main">
       <Header />
@@ -138,7 +181,7 @@ function Main() {
       </div>
       <div className="container">
         <div className="image-container">
-          <img src={image} alt="" />
+          <img src={image} alt="" onClick={download} />
           {is_loading && (
             <div className="spinner">
               <motion.div
@@ -161,6 +204,17 @@ function Main() {
               </motion.div>
             </div>
           )}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            padding: "0.5rem",
+          }}
+        >
+          <div className="custom-ripple download-button" onClick={download}>
+            Download
+          </div>
         </div>
       </div>
       <Footer />
