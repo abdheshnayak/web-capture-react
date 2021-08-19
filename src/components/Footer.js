@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 function Footer() {
@@ -9,7 +10,13 @@ function Footer() {
           <div className="copyright">
             COPYRIGHT&copy;{new Date().getFullYear()}{" "}
             <a className="footer-copy-link" href="https://anayak.com.np">
-              ANAYAK
+              <motion.span
+                style={{ display: "inline-block" }}
+                whileHover={{ scale: 1.05, x: 2 }}
+                whileTap={{ scale: 1 }}
+              >
+                ANAYAK
+              </motion.span>
             </a>
           </div>
         </div>

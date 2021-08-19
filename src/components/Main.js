@@ -175,7 +175,12 @@ function Main() {
               defaultValue="https://google.com"
             />
 
-            <input type="submit" value="Capture" />
+            <motion.input
+              type="submit"
+              value="Capture"
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.05 }}
+            />
           </div>
         </form>
       </div>
@@ -212,9 +217,14 @@ function Main() {
             padding: "0.5rem",
           }}
         >
-          <div className="custom-ripple download-button" onClick={download}>
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1 }}
+            className="custom-ripple download-button"
+            onClick={download}
+          >
             Download
-          </div>
+          </motion.div>
         </div>
       </div>
       <Footer />
