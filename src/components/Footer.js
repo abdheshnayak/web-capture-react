@@ -7,7 +7,7 @@ function Footer() {
       <div className="footer">
         <div className="container">
           <div className="copyright">
-            &copy;{new Date().getFullYear()}{" "}
+            COPYRIGHT&copy;{new Date().getFullYear()}{" "}
             <a className="footer-copy-link" href="https://anayak.com.np">
               ANAYAK
             </a>
