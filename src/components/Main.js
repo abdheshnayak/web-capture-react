@@ -46,17 +46,29 @@ function Main() {
       return;
     }
     setis_loading(true);
-    axios({
-      url: "https://api.anayak.com.np/web-capture/",
+
+    var options = {
+      method: "GET",
+      url: "https://web-capture.p.rapidapi.com/image",
       params: {
         url: my_ref.current.value,
         width: width_height.width,
         height: width_height.height,
       },
-    })
+      headers: {
+        "x-rapidapi-host": "web-capture.p.rapidapi.com",
+        "x-rapidapi-key": "44fcc7f8f7mshacfcb91fc4190bfp189dddjsnaa696e83052d",
+      },
+      responseType: "arraybuffer",
+    };
+
+    axios(options)
       .then((res) => {
         setis_loading(false);
-        setimage(res.data);
+
+        const data = Buffer.from(res.data, "binary").toString("base64");
+        setimage(data);
+        // console.log(data);
       })
       .catch((err) => {
         setis_loading(false);
@@ -186,7 +198,11 @@ function Main() {
       </div>
       <div className="container">
         <div className="image-container">
-          <img src={image} alt="" onClick={download} />
+          <img
+            src={`data:image/png;base64,${image}`}
+            alt=""
+            onClick={download}
+          />
           {is_loading && (
             <div className="spinner">
               <motion.div

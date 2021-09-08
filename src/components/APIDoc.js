@@ -36,53 +36,35 @@ function APIDoc() {
           <h3>Here You Go:</h3>
           <ol>
             <li>
-              <p>
-                <b>With Base64 String Response</b>
-              </p>
-              <p>
-                <b>End Point</b> :{" "}
-                <code>https://api.anayak.com.np/web-capture/</code>
-                <br />
-                <b>Method</b> : <span>GET</span>
-                <br />
-                <b>Params</b> :{" "}
-                <span>url(String), width (Number), height(Number)</span>
-                <br />
-                <b>Response</b> : <span>Image (base64 string)</span>
-                <h4>Example:</h4>
-                <code>
-                  https://api.anayak.com.np/web-capture/?url=https://google.com
-                </code>
-              </p>
-            </li>
-            <li>
               <b>With Image Type Response</b>
               <p>
                 <b>End Point</b> :{" "}
-                <code>https://api.anayak.com.np/web-capture/image</code>
+                <code>https://web-capture.p.rapidapi.com/image</code>
                 <br />
                 <b>Method</b> : <span>GET</span>
                 <br />
                 <b>Params</b> :{" "}
-                <span>url(String), width (Number), height(Number)</span>
+                <span>
+                  url(String), width (Number), height(Number),rapidapi-key
+                </span>
                 <br />
                 <b>Response</b> : <span>Image</span>
               </p>
               <h4>Example:</h4>
               <pre style={{ overflowX: "auto", padding: "1rem" }}>
                 <a
-                  href="https://api.anayak.com.np/web-capture/image?url=https://google.com&width=12&height=8"
+                  href="https://web-capture.p.rapidapi.com/image?url=https:%2F%2Fgoogle.com&width=1024&height=780&rapidapi-key=44fcc7f8f7mshacfcb91fc4190bfp189dddjsnaa696e83052d"
                   style={{ textDecoration: "none", color: "#333" }}
                 >
                   <code>
-                    https://api.anayak.com.np/web-capture/image?url=https://google.com&width=12&height=8
+                    https://web-capture.p.rapidapi.com/image?url=https:%2F%2Fgoogle.com&width=1024&height=780&rapidapi-key=your-api-key
                   </code>
                 </a>
               </pre>
               <pre style={{ overflowX: "auto", padding: "1rem" }}>
                 <code>
                   &lt;img
-                  src="https://api.anayak.com.np/web-capture/image?url=https://google.com&width=12&height=8
+                  src="https://web-capture.p.rapidapi.com/image?url=https:%2F%2Fgoogle.com&width=1024&height=780&rapidapi-key=your-key
                   " alt="" /&gt;
                 </code>
               </pre>{" "}
@@ -93,7 +75,7 @@ function APIDoc() {
 
           <img
             className="output-image"
-            src="https://api.anayak.com.np/web-capture/image?url=https://google.com&width=12&height=8"
+            src="https://web-capture.p.rapidapi.com/image?url=https:%2F%2Fgoogle.com&width=1024&height=780&rapidapi-key=44fcc7f8f7mshacfcb91fc4190bfp189dddjsnaa696e83052d"
             alt=""
           />
         </div>
