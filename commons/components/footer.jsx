@@ -1,17 +1,17 @@
-import { motion } from "framer-motion";
-import React from "react";
+import { motion } from 'framer-motion';
+import React from 'react';
 
 function Footer() {
   return (
     <>
-      <div style={{ padding: "2rem" }}></div>
+      <div style={{ padding: '2rem' }} />
       <div className="footer">
         <div className="container">
           <div className="copyright">
-            COPYRIGHT&copy;{new Date().getFullYear()}{" "}
+            COPYRIGHT&copy;{new Date().getFullYear()}{' '}
             <a className="footer-copy-link" href="https://anayak.com.np">
               <motion.span
-                style={{ display: "inline-block" }}
+                style={{ display: 'inline-block' }}
                 whileHover={{ scale: 1.05, x: 2 }}
                 whileTap={{ scale: 1 }}
               >
