@@ -59,7 +59,14 @@ const Main = () => {
     (async () => {
       try {
         // @ts-ignore
-        const res = await axios(options);
+        const res = await axios({
+          ...options,
+          params: {
+            url: myRef.current.value || 'https://google.com',
+            height: widthHeight.height || '780',
+            width: widthHeight.width || '1024',
+          },
+        });
         const b = Buffer.from(res.data, 'binary');
         setimageBuffer(b);
         const img = b.toString('base64');
