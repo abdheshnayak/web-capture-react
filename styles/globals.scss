@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  @import "./github-dark.css";
+
+  @media screen and (min-width: 960px) {
+    html {
+      min-width: 100vw;
+      margin-left: 0;
+      margin-right: 0;
+      overflow-x: hidden;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-primary-200;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-500 rounded cursor-pointer;
+  }
+
+  ::-webkit-scrollbar-track-piece {
+    @apply bg-transparent;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-600;
+  }
+
+  .no-scroll-bar::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}

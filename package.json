@@ -1,0 +1,50 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "serve": "next serve",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^2.2.1",
+    "@mdx-js/react": "^2.2.1",
+    "axios": "^0.24.0",
+    "classnames": "^2.3.2",
+    "fm": "^0.8.0",
+    "framer-motion": "^5.6.0",
+    "html-react-parser": "^3.0.8",
+    "marked": "^4.2.12",
+    "next": "^13.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-toastify": "^9.1.1",
+    "remark-gfm": "^3.0.1",
+    "yaml": "^2.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/eslint-parser": "^7.19.1",
+    "@madhouselabs/eslint-config-next": "^1.0.0",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-import-resolver-jsconfig": "^1.1.0",
+    "eslint-import-resolver-node": "^0.3.7",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prefer-arrow-functions": "^3.1.4",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "next-transpile-modules": "^9.1.0",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.3",
+    "sass": "^1.58.0",
+    "scss": "^0.2.4",
+    "tailwindcss": "^3.2.4"
+  }
+}

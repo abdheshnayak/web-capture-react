@@ -1,0 +1,9 @@
+/*!
+  Theme: Harmonic16 Light
+  Author: Jannik Siebert (https://github.com/janniks)
+  License: ~ MIT (or more permissive) [via base16-schemes-source]
+  Maintainer: @highlightjs/core-team
+  Version: 2021.09.0
+*/
+
+pre code{display:block;overflow-x:auto;padding:1em}code{padding:3px 5px}{color:#405c79;background:#f7f9fb} ::selection,::selection{background-color:#cbd6e2;color:#405c79}-comment{color:#aabcce}-tag{color:#627e99}-operator,-punctuation,-subst{color:#405c79}-operator{opacity:.7}-bullet,-deletion,-name,-selector-tag,-template-variable,-variable{color:#bf8b56}-attr,-link,-literal,-number,-symbol,-variable.constant_{color:#bfbf56}-class -title,-title,-title.class_{color:#8bbf56}-strong{font-weight:700;color:#8bbf56}-addition,-code,-string,-title.class_.inherited__{color:#56bf8b}-built_in,-doctag,-keyword-atrule,-quote,-regexp{color:#568bbf}-attribute,-function -title,-section,-title.function_,.ruby -property{color:#8b56bf}.diff -meta,-keyword,-template-tag,-type{color:#bf568b}-emphasis{color:#bf568b;font-style:italic}-meta,-meta -keyword,-meta -string{color:#bf5656}-meta -keyword,-meta-keyword{font-weight:700}
