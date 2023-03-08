@@ -32,7 +32,7 @@ const Main = () => {
 
   const options = {
     method: 'GET',
-    url: 'https://web-capture2.p.rapidapi.com/image',
+    url: 'https://web-capture2.p.rapidapi.com',
     params: { url: 'https://google.com', height: '780', width: '1024' },
     headers: {
       'X-RapidAPI-Key': '44fcc7f8f7mshacfcb91fc4190bfp189dddjsnaa696e83052d',
@@ -56,11 +56,16 @@ const Main = () => {
     }
     setisLoading(true);
 
+    if (isLoading) {
+      toast.error('already loading please wait');
+    }
+
     (async () => {
       try {
         // @ts-ignore
         const res = await axios({
           ...options,
+          url: `${options.url}/image`,
           params: {
             url: myRef.current.value || 'https://google.com',
             height: widthHeight.height || '780',
@@ -137,6 +142,44 @@ const Main = () => {
 
       console.log(err);
     }
+  };
+
+  const downloadPdf = () => {
+    if (!buffer) {
+      toast.error('capture an image first');
+      return;
+    }
+    if (isLoading) {
+      toast.error('already loading please wait');
+    }
+
+    (async () => {
+      try {
+        setisLoading(true);
+        // @ts-ignore
+        const res = await axios({
+          ...options,
+          url: `${options.url}/pdf`,
+          params: {
+            url: myRef.current.value || 'https://google.com',
+            height: widthHeight.height || '780',
+            width: widthHeight.width || '1024',
+          },
+        });
+        const b = Buffer.from(res.data, 'binary');
+
+        const url_ = window.URL.createObjectURL(new Blob([b]));
+        const link = document.createElement('a');
+        link.href = url_;
+        link.setAttribute('download', 'capture.pdf'); // or any other extension
+        document.body.appendChild(link);
+        link.click();
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setisLoading(false);
+      }
+    })();
   };
 
   return (
@@ -217,6 +260,7 @@ const Main = () => {
             display: 'flex',
             justifyContent: 'flex-end',
             padding: '0.5rem',
+            gap: '1rem',
           }}
         >
           <motion.div
@@ -226,6 +270,15 @@ const Main = () => {
             onClick={download}
           >
             Download
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1 }}
+            className="custom-ripple download-button"
+            onClick={downloadPdf}
+          >
+            Download Pdf
           </motion.div>
         </div>
       </div>
